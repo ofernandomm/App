@@ -4,8 +4,8 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 export default function App() {
   const [textItem,setTextItem]= useState('')
   const [itemList,setItemList]= useState(['casa','dos','tres'])
-  const onHandlerChangeItem = (t)=>{
-    setTextItem(t)
+  const onHandlerChangeItem = (text)=>{
+    setTextItem(text)
   };
   const addItem=()=>{
     setItemList(currentItems=>[
