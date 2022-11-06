@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
   const [textItem,setTextItem]= useState('Hola!')
-  const [itemList,setItemList]= useState([])
+  const [itemList,setItemList]= useState(['casa','dos','tres'])
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -12,15 +12,9 @@ export default function App() {
       </View>
       <View style={styles.listContainer}>
         <Text style={styles.listTitle}>Todo list</Text>
-        <View style={styles.listItemContainer}>
-          <Text style={styles.listItem}>primera tarea</Text>
-        </View>
-        <View style={styles.listItemContainer}>
-          <Text style={styles.listItem}>primera tarea</Text>
-        </View>
-        <View style={styles.listItemContainer}>
-          <Text style={styles.listItem}>primera tarea</Text>
-        </View>
+        {itemList.map(item=><View key={item} style={styles.listItemContainer}>
+          <Text style={styles.listItem}>{item}</Text>
+        </View>)}
       </View>
     </View>
   );
