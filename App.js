@@ -2,13 +2,22 @@ import React, {useState} from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
 export default function App() {
-  const [textItem,setTextItem]= useState('Hola!')
+  const [textItem,setTextItem]= useState('')
   const [itemList,setItemList]= useState(['casa','dos','tres'])
+  const onHandlerChangeItem = (t)=>{
+    setTextItem(t)
+  };
+  const addItem=()=>{
+    setItemList(currentItems=>[
+      ...currentItems, textItem
+    ])
+    setTextItem('')
+  }
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} value={textItem}/>
-        <Button title='ADD' color='#113537' onPress={()=>null}/>
+        <TextInput style={styles.input} value={textItem} onChangeText={onHandlerChangeItem}/>
+        <Button title='ADD' color='#113537' onPress={addItem}/>
       </View>
       <View style={styles.listContainer}>
         <Text style={styles.listTitle}>Todo list</Text>
