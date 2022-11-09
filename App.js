@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, TextInput, Button, FlatList } from 'react-native';
 
 export default function App() {
   const [textItem,setTextItem]= useState('')
@@ -17,6 +17,11 @@ export default function App() {
       setTextItem('')
     }
   }
+  const renderItem =({item})=>(
+        <View style={styles.listItemContainer}>
+          <Text style={styles.listItem}>{item.value}</Text>
+        </View>
+  )
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -25,10 +30,13 @@ export default function App() {
       </View>
       <View style={styles.listContainer}>
         <Text style={styles.listTitle}>Todo list</Text>
-        {itemList.map(item=><View key={item.id} style={styles.listItemContainer}>
-          <Text style={styles.listItem}>{item.value}</Text>
-        </View>)}
       </View>
+        <FlatList
+        style={styles.listContainer}
+        data={itemList}
+        renderItem={renderItem}
+        keyExtractor={item=>item.id.toString()}
+        />
     </View>
   );
 }
