@@ -3,7 +3,7 @@ import {View, Modal, Text, Button} from 'react-native'
 import {styles} from './styles'
 
 
-const ModalDelete = ({modalVisible,selectedTask,onHandleCancel,onHandleDelete,onHandleComplete}) =>{
+const ModalActions = ({modalVisible,selectedTask,onHandleCancel,onHandleDelete,onHandleComplete}) =>{
     return(
         <Modal visible={modalVisible} animationType='fade'>
                 <View style={styles.modalContainer}>
@@ -35,4 +35,4 @@ const ModalDelete = ({modalVisible,selectedTask,onHandleCancel,onHandleDelete,on
 }
 
 
-export default ModalDelete;
+export default ModalActions;

@@ -14,34 +14,4 @@ export const styles = StyleSheet.create({
       marginBottom:10,
       color:'#37505C',
     },
-    listItemContainer: {
-      paddingVertical: 20,
-      backgroundColor: '#9A848F',
-      borderRadius: 5,
-      shadowColor: "#000",
-      shadowOffset: {
-          width: 0,
-          height: 2,
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
-      elevation: 5,
-      justifyContent: 'center',
-      marginVertical: 5,
-    },
-    listItemContainer2:{
-      paddingVertical: 20,
-      backgroundColor: 'white',
-      borderRadius: 5,
-      shadowColor: "#000",
-      shadowOffset: {
-          width: 0,
-          height: 2,
-      },
-      shadowOpacity: 0.25,
-      shadowRadius: 3.84,
-      elevation: 5,
-      justifyContent: 'center',
-      marginVertical: 5,
-    }
   });

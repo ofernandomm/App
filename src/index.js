@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import {styles} from './styles'
 import { AddItems } from './components/index';
-import { ModalDelete } from './components/index';
+import { ModalActions } from './components/index';
 import { TodoList } from './components/index';
 import { ItemToDo } from './components/index';
 
@@ -17,31 +17,6 @@ export default function App() {
   const onHandlerChangeItem = (text)=>{
     setTextItem(text)
   };
-
-  const addItem=()=>{
-    if(textItem==''){
-      alert('Agrega una tarea')
-    }else{
-      setItemList(currentItems=>[
-        ...currentItems, {id: Math.random().toString(), value:textItem, completed:false}
-      ])
-      setTextItem('')
-    }
-  }
-
-  const renderItem =({item})=>{
-    let boxStyle=""
-    if(item.completed==false){
-      boxStyle=styles.listItemContainer
-    }else{
-      boxStyle=styles.listItemContainer2
-    }
-    return(
-        <TouchableOpacity style={boxStyle} onPress={()=>onHandleSelected(item)}>
-          <ItemToDo item={item}/>
-        </TouchableOpacity>
-    )
-  }
 
   const onHandleSelected = (item)=>{
     setSelectedTask(item);
@@ -64,6 +39,19 @@ export default function App() {
     setModalVisible(false);
   }
 
+  const addItem=()=>{
+    setItemList(currentItems=>[
+      ...currentItems, {id: Math.random().toString(), value:textItem, completed:false}
+    ])
+    setTextItem('')
+}
+
+const renderItem =({item})=>{
+  return(
+        <ItemToDo item={item} onHandleSelected={onHandleSelected}/>
+  )
+}
+
   return (
     <View style={styles.container}>
       <AddItems textItem={textItem} addItem={addItem} onHandlerChangeItem={onHandlerChangeItem}  />
@@ -71,7 +59,7 @@ export default function App() {
         <Text style={styles.listTitle}>Todo list</Text>
       </View>
       <TodoList itemList={itemList} renderItem={renderItem}/>
-      <ModalDelete modalVisible={modalVisible} onHandleCancel={onHandleCancel} onHandleDelete={onHandleDelete} onHandleComplete={onHandleComplete} selectedTask={selectedTask}/>
+      <ModalActions modalVisible={modalVisible} onHandleCancel={onHandleCancel} onHandleDelete={onHandleDelete} onHandleComplete={onHandleComplete} selectedTask={selectedTask}/>
     </View>
   );
 }
