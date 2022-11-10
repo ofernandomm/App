@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import { StyleSheet, Text, View, TextInput, Button, FlatList, Modal, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList, Modal, TouchableOpacity } from 'react-native';
+import { AddItems } from './components/index';
 
 export default function App() {
   const [textItem,setTextItem]= useState('')
@@ -43,10 +44,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.inputContainer}>
-        <TextInput style={styles.input} value={textItem} onChangeText={onHandlerChangeItem}/>
-        <Button disabled={!textItem} title='ADD' color='#113537' onPress={addItem}/>
-      </View>
+      <AddItems textItem={textItem} addItem={addItem} onHandlerChangeItem={onHandlerChangeItem}  />
       <View style={styles.listContainer}>
         <Text style={styles.listTitle}>Todo list</Text>
       </View>
@@ -87,17 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFE599',
     marginTop:25,
   },
-  inputContainer:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    marginHorizontal:20,
-    marginVertical: 40,
-  },
-  input:{
-    width:'80%',
-    borderBottomWidth:1,
-    borderBottomColor:'#37505C',
-  },
+
   listContainer:{
     marginHorizontal:20,
   },
