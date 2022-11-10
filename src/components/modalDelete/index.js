@@ -3,7 +3,7 @@ import {View, Modal, Text, Button} from 'react-native'
 import {styles} from './styles'
 
 
-const ModalDelete = ({modalVisible,selectedTask,onHandleCancel,onHandleDelete}) =>{
+const ModalDelete = ({modalVisible,selectedTask,onHandleCancel,onHandleDelete,onHandleComplete}) =>{
     return(
         <Modal visible={modalVisible} animationType='fade'>
                 <View style={styles.modalContainer}>
@@ -17,6 +17,11 @@ const ModalDelete = ({modalVisible,selectedTask,onHandleCancel,onHandleDelete}) 
                     title='cancel'
                     color='#9a848f'
                     onPress={onHandleCancel}
+                    />
+                    <Button
+                    title='Complete'
+                    color='#9a848f'
+                    onPress={onHandleComplete}
                     />
                     <Button
                     title='Delete'
