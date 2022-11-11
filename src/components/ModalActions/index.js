@@ -15,17 +15,17 @@ const ModalActions = ({modalVisible,selectedTask,onHandleCancel,onHandleDelete,o
                 <View style={styles.modalButtonContainer}>
                     <Button
                     title='cancel'
-                    color='#9a848f'
+                    color='#46919E'
                     onPress={onHandleCancel}
                     />
                     <Button
                     title='Complete'
-                    color='#9a848f'
+                    color='#5BD5EB'
                     onPress={onHandleComplete}
                     />
                     <Button
                     title='Delete'
-                    color='#9a848f'
+                    color='#9E3E69'
                     onPress={onHandleDelete}
                     />
                 </View>

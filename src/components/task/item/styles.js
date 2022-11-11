@@ -7,12 +7,12 @@ export const styles=StyleSheet.create({
     },
     listItemCompleted:{
         fontSize: 14,
-        color: '#e62e1b',
+        color: '#ffffff',
         paddingHorizontal: 10,
     },
     listItemContainer: {
         paddingVertical: 20,
-        backgroundColor: '#9A848F',
+        backgroundColor: '#EBE18A',
         borderRadius: 5,
         shadowColor: "#000",
         shadowOffset: {
@@ -27,7 +27,7 @@ export const styles=StyleSheet.create({
       },
       listItemContainerCompleted:{
         paddingVertical: 20,
-        backgroundColor: 'white',
+        backgroundColor: '#5BD5EB',
         borderRadius: 5,
         shadowColor: "#000",
         shadowOffset: {

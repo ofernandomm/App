@@ -5,8 +5,8 @@ import {styles} from './styles'
 const AddItems = ({textItem,addItem,onHandlerChangeItem}) =>{
     return(
         <View style={styles.inputContainer}>
-            <TextInput style={styles.input} value={textItem} onChangeText={onHandlerChangeItem}/>
-            <Button disabled={!textItem} title='ADD' color='#113537' onPress={addItem}/>
+            <TextInput style={styles.input} value={textItem} onChangeText={onHandlerChangeItem} placeholder='Escribe tu tarea' placeholderTextColor="#808080" />
+            <Button disabled={!textItem} title='ADD' color='#9E3E69' onPress={addItem}/>
         </View>
     )
 }

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Text, View, TouchableOpacity } from 'react-native';
+import { Text, View } from 'react-native';
 import {styles} from './styles'
 import { AddItems } from './components/index';
 import { ModalActions } from './components/index';
@@ -57,6 +57,7 @@ const renderItem =({item})=>{
       <AddItems textItem={textItem} addItem={addItem} onHandlerChangeItem={onHandlerChangeItem}  />
       <View style={styles.listContainer}>
         <Text style={styles.listTitle}>Todo list</Text>
+        <Text style={styles.texto}>Estas son las tareas que debes realizar y las que ya completaste:</Text>
       </View>
       <TodoList itemList={itemList} renderItem={renderItem}/>
       <ModalActions modalVisible={modalVisible} onHandleCancel={onHandleCancel} onHandleDelete={onHandleDelete} onHandleComplete={onHandleComplete} selectedTask={selectedTask}/>

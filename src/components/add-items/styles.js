@@ -9,6 +9,6 @@ export const styles=StyleSheet.create({
       input:{
         width:'80%',
         borderBottomWidth:1,
-        borderBottomColor:'#37505C',
+        borderBottomColor:'#808080',
       },
 })

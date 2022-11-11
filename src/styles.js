@@ -2,16 +2,20 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#FFE599',
+      backgroundColor: '#FFFFFF',
       marginTop:25,
     },
     listContainer:{
       marginHorizontal:20,
     },
     listTitle:{
-      fontSize:18,
+      fontSize:20,
       fontWeight:'bold',
       marginBottom:10,
-      color:'#37505C',
+      color:'#46919E',
+    },
+    texto:{
+      color:'#808080',
+      paddingBottom:10
     },
   });
